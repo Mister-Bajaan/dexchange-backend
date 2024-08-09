@@ -34,6 +34,8 @@ export const postUser = async (req, res) => {
     email: req.body.email,
     status: req.body.status,
     role: req.body.role,
+    phone: req.body.phone,
+    adresse: req.body.adresse,
     password: hashedPassword,
   });
 

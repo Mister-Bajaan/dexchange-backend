@@ -9,8 +9,8 @@ import { deleteUser } from "../controllers/Delete.controller.js";
 const routerUser = Router();
 
 //CRUD
-routerUser.post("/", postUser);
-routerUser.get("/", getUser);
+routerUser.post("/postUser", postUser);
+routerUser.get("/getUser", getUser);
 
 routerUser.get("/:id", getOneUser);
 routerUser.put("/:id", updateOneUser);

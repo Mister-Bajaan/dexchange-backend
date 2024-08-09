@@ -15,14 +15,22 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  phone: {
+    type: String,
+    required: true,
+  },
+  adresse:{
+    type: String,
+    required: true,
+  },
   status: {
     type: String,
     default: "actif",
     enum: ["actif", "inactif"],
   },
-  Role: {
+  role: {
     type: String,
-    default: "Agence",
+    default: "Client",
     enum: ["Agence", "Admin", "Client", "Mandataire"],
   },
   password: {
