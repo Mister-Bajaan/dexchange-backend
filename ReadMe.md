@@ -81,4 +81,4 @@ Cette documentation fournit un aperçu de la structure du projet, explique comme
 
 ## Auteur
 
-Ce projet a été développé par El Hadji Seydou Badiane dans le cadre du test d'obtention de stage chez Dexchange.****
+Ce projet a été développé par El Hadji Seydou Badiane dans le cadre du test d'obtention de stage chez Dexchange.********

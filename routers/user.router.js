@@ -17,12 +17,12 @@ routerUser.post("/postUser", postUser);
 routerUser.get("/getUser", getUser);
 
 //http://localhost:3000/user/:id
-routerUser.get("/:id", getOneUser);
+routerUser.get("/getOneUser/:id", getOneUser);
 
 //http://localhost:3000/user/updateOneUser/:id
-routerUser.put("/:id", updateOneUser);
+routerUser.put("/updateOneUser/:id", updateOneUser);
 
 //http://localhost:3000/user/getOneUser/:id
-routerUser.delete("/:id", deleteUser);
+routerUser.delete("/deleteUser/:id", deleteUser);
 
 export default routerUser;
