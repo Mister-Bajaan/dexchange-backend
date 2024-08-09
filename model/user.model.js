@@ -2,6 +2,14 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
+
+/**
+ * l'ensemble des champs de l'utilisateur pour lapartie dashboard et ses informations personnelles 
+ *
+ * Dashboard : Nom, prénom, email, role, status
+ * Personnel : Nom, prénom, email, phone, adresse, role
+ */
+
 const userSchema = new Schema({
   nom: {
     type: String,
@@ -15,24 +23,27 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  phone: {
+  role: {
     type: String,
-    required: true,
-  },
-  adresse:{
-    type: String,
-    required: true,
+    default: "Client",
+
+    //l'utilisateur ne pourra faire que ces choix, a mettre dans inut role
+    enum: ["Agence", "Admin", "Client", "Mandataire"],
   },
   status: {
     type: String,
     default: "actif",
     enum: ["actif", "inactif"],
   },
-  role: {
+  phone: {
     type: String,
-    default: "Client",
-    enum: ["Agence", "Admin", "Client", "Mandataire"],
+    required: true,
   },
+  adresse: {
+    type: String,
+    required: true,
+  },
+
   password: {
     type: String,
     required: true,

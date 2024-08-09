@@ -13,8 +13,7 @@ export const postUser = async (req, res) => {
     res.status(400).json({ alerte: "Veuillez saisir toutes les informations" });
   }
 
-
-  //verification de l'existance de l'utilisateur dans la base de données
+  //verification de l'existance de l'utilisateur dans la base de données comme l'adresse email est unique pour chaque personne
   const email = req.body.email;
   const existingUser = await User.findOne({ email });
 
@@ -22,16 +21,18 @@ export const postUser = async (req, res) => {
     return res.status(409).json({ message: "User already exists" });
   }
 
-
-  //Hashing du mot de passe
+  //Hashing du mot de passe avec bcrypt pour la sécurité
   const hashedPassword = await bcrypt.hash(req.body.password, 12);
-
 
   //Création de l'utilisateur dans la base de données
   const post = await User.create({
     nom: req.body.nom,
     prenom: req.body.prenom,
     email: req.body.email,
+    prenom: req.body.prenom,
+    email: req.body.email,
+    status: req.body.status,
+    role: req.body.role,
     status: req.body.status,
     role: req.body.role,
     phone: req.body.phone,
