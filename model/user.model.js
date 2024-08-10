@@ -2,9 +2,8 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-
 /**
- * l'ensemble des champs de l'utilisateur pour lapartie dashboard et ses informations personnelles 
+ * l'ensemble des champs de l'utilisateur pour lapartie dashboard et ses informations personnelles
  *
  * Dashboard : Nom, prénom, email, role, status
  * Personnel : Nom, prénom, email, phone, adresse, role
@@ -43,10 +42,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-
+  //comme il n'existe pas dans le formulaire, on ne peut pas avoir un champ password, mais c'est demandé dans le cahier de charge
   password: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
