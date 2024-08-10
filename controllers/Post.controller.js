@@ -7,9 +7,10 @@ export const postUser = async (req, res) => {
     !req.body.nom ||
     !req.body.prenom ||
     !req.body.email ||
-    !req.body.password ||
     !req.body.role ||
-    !req.body.status
+    // !req.body.status || optionel
+    !req.body.phone ||
+    !req.body.adresse
   ) {
     return res
       .status(400)
